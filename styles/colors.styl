@@ -1,0 +1,78 @@
+// States ======================================================================
+
+applyColorState($bg = lighten(blueGrey(100), 80%), $textColor = lighten(blueGrey(100), 80%), $shadow = 1px 0 5px rgba(0, 0, 0, 0.2))
+  if light(darken($bg, 30%))
+    $textColor = darken($textColor, 70%);
+    $shadow = none;
+  color: $textColor;
+  fill: transparentify($textColor, 0.7);
+  background: $bg;
+  text-shadow: $shadow;
+  border-color: darken($bg, 5%);
+
+applyGradientState($bg = lighten(blueGrey(100), 80%), $textColor = lighten(blueGrey(100), 80%), $shadow = 1px 0 5px rgba(0, 0, 0, 0.2))
+  applyColorState(linear-gradient(to bottom right, lighten($bg, 10%), darken($bg, 10%)), $textColor, $shadow);
+
+// Selection ===================================================================
+
+selection-background(val)
+  ::selection
+    background: val;
+  ::-moz-selection
+    background: val;
+
+selection-color(val)
+  ::selection
+    color: val;
+  ::-moz-selection
+    color: val;
+
+clr(val)
+  color: val;
+  fill: val;
+
+themeColorShade(name, val)
+  if ('colors' in theme) && (name in theme.colors)
+    color = theme.colors[name];
+    val = join('', (val))
+  else
+    return null;
+
+line(start = null, finish = null, dir = 'to bottom right')
+  background: linear-gradient(
+    s(dir),
+    start,
+    finish
+  );
+
+// Pairs =======================================================================
+
+darkenPair(color, val = 10%)
+  return {
+    start: color,
+    finish: darken(color, val),
+  };
+
+lightenPair(color, val = 10%)
+  return {
+    start: color,
+    finish: lighten(color, val)
+  };
+
+lightPair(color, shift = 5%)
+  return {
+    start: lighten(color, shift),
+    finish: darken(color, shift),
+  };
+
+darkenLine(color, val = 10%, dir = 'to bottom right')
+  vals = darkenPair(color, val);
+  line(vals.start, vals.finish, dir);
+
+lightenLine(color, val = 10%, dir = 'to bottom right')
+  vals = lightenPair(color, val);
+  line(vals.start, vals.finish, dir);
+
+lightLine(color, shift = 10%, dir = 'to bottom right')
+  vals = lightPair(color, shift);
+  line(vals.start, vals.finish, dir);

@@ -1,0 +1,69 @@
+env:
+  browser: true
+  es2021: true
+  node: true
+extends:
+  - 'plugin:node/recommended'
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2020
+  modules: true
+  spread: true
+  restParams: true
+plugins:
+  - react
+settings:
+  react:
+    createClass: createReactClass
+    pragma: React
+    fragment: Fragment
+    version: detect
+    flowVersion: '0.53'
+rules:
+  newline-per-chained-call:
+    - 2
+  quotes:
+    - error
+    - single
+    - allowTemplateLiterals: true
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  semi:
+    - error
+    - always
+  node/exports-style:
+    - error
+    - module.exports
+  node/prefer-global/buffer:
+    - error
+    - always
+  node/prefer-global/console:
+    - error
+    - always
+  node/prefer-global/process:
+    - error
+    - always
+  node/prefer-global/url-search-params:
+    - error
+    - always
+  node/prefer-global/url:
+    - error
+    - always
+  node/prefer-promises/dns: error
+  node/file-extension-in-import:
+    - error
+    - always
+  node/prefer-promises/fs: error
+
+overrides:
+  - files:
+      - 'node_modules'
+    rules:
+      sourceType: 2

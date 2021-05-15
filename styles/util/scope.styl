@@ -1,0 +1,10 @@
+__STYLA_SCOPE__ = {};
+
+styla(name = null, value = null)
+  if name == null
+    return __STYLA_SCOPE__;
+  else
+    if value == null
+      return __STYLA_SCOPE__[name];
+    else
+      __STYLA_SCOPE__[name] = value;

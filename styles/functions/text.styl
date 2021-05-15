@@ -1,0 +1,66 @@
+replace($str, $sub, $target)
+  return join($target, split($sub, $str))
+
+$symbols = {
+  'A': 'a',
+  'B': 'b',
+  'C': 'c',
+  'D': 'd',
+  'E': 'e',
+  'F': 'f',
+  'G': 'g',
+  'H': 'h',
+  'I': 'i',
+  'J': 'g',
+  'K': 'k',
+  'L': 'l',
+  'M': 'm',
+  'N': 'n',
+  'O': 'o',
+  'P': 'p',
+  'Q': 'q',
+  'R': 'r',
+  'S': 's',
+  'T': 't',
+  'U': 'u',
+  'V': 'v',
+  'W': 'w',
+  '\X': 'x',
+  'Y': 'y',
+  'Z': 'z'
+};
+
+$letters = values($symbols);
+
+lower-case($str)
+  for $upper, $lower in $symbols
+    $str = replace($str, $upper, $lower);
+  return $str;
+
+upper-case($str)
+  for $upper, $lower in $symbols
+    $str = replace($str, $lower, $upper);
+  return $str;
+
+only-letters($str, $allowed = ())
+  $result = '';
+  $word = split('', lower-case($str));
+  for $s in $word
+    if $s in $letters or $s in $allowed
+      $result = $result + $s;
+  return $result;
+
+dasherize($str)
+  return replace(
+    lower-case(
+      only-letters(
+        $str, (' ')
+      )
+    ),
+    ' ',
+    '-'
+  )
+
+capitalize(str)
+  count = length(split('', str));
+  return upper-case(substr(str, 0, 1)) + substr(str, 1, count - 1);

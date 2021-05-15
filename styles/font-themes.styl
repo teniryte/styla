@@ -1,0 +1,165 @@
+font-theme(val)
+  if val == lpchat
+    h1 {
+      font-size: 1.8em;
+      font-weight: 300;
+      color: primary(700);
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    h2
+      font-size: 1.6em;
+      font-weight: 300;
+      color: primary(700);
+
+    h3 {
+      font-size: 1.4em;
+      font-weight: 300;
+      color: primary(700);
+    }
+
+    pre {
+      font-family: 'Hack', 'Roboto Mono', 'Menlo', 'Consolas', monospace;
+    }
+
+    blockquote {
+      margin-left: 5px;
+      border-left: 3px solid primary(100);
+      padding-left: 15px;
+    }
+
+    sup {
+      font-size: 0.8em;
+      display: inline-block;
+      vertical-align: super;
+    }
+
+    sub {
+      font-size: 0.8em;
+      display: inline-block;
+      vertical-align: sub;
+    }
+
+    .ql-indent-1 {
+      padding-left: 2em;
+    }
+
+    .ql-indent-2 {
+      padding-left: 4em;
+    }
+
+    .ql-indent-3 {
+      padding-left: 6em;
+    }
+
+    .ql-indent-4 {
+      padding-left: 8em;
+    }
+
+    .ql-indent-5 {
+      padding-left: 10em;
+    }
+
+    .ql-size-small {
+      font-size: 0.8em;
+    }
+
+    .ql-size-normal {
+      font-size: 1em;
+    }
+
+    .ql-size-large {
+      font-size: 1.5em;
+    }
+
+    .ql-size-huge {
+      font-size: 2em;
+    }
+
+    // Content Section
+
+    contentSection()
+      background-color: #fff;
+      // border-radius: 3px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      h3
+        font-size: 1.4em;
+        color: palette('Blue Grey', '700')
+        font-weight: 500;
+
+    strong, b {
+      font-weight: 600;
+    }
+
+    & > section
+      contentSection();
+
+    .content-section
+      contentSection();
+
+    h2
+      font-size: 1.6em;
+      font-weight: 300;
+      color: palette('Blue Grey', '700')
+
+  if val == modern
+    font-family: 'Helvetica Neue', 'Roboto', 'Open Sans', 'Arial', sans-serif;
+    font-weight: 400;
+    antialias: true;
+
+    h1, h2, h3, h4, h5, h6
+      font-weight: 300;
+
+      strong
+        font-weight: 500;
+
+    h1
+      font-size: 3em;
+      margin-bottom: 40px;
+
+    h2
+      font-size: 2.6em;
+      margin-bottom: 34px;
+      margin-top: 30px;
+
+      &:first-child
+        margin-top: 0;
+
+    h3
+      font-size: 2.2em;
+      margin-bottom: 28px;
+      margin-top: 26px;
+
+    h4
+      font-size: 1.8em;
+      margin-bottom: 24px;
+      margin-top: 20px;
+      font-weight: 400;
+
+    h5
+      font-size: 1.5em;
+      margin-bottom: 22px;
+      margin-top: 20px;
+      font-weight: 400;
+
+    h6
+      font-size: 1.2em;
+      margin-bottom: 22px;
+      margin-top: 20px;
+      font-weight: 500;
+
+    strong
+      font-weight: 600;
+
+    em
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.6px;
+
+    p
+      line-height: 1.3em;

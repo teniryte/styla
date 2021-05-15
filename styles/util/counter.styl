@@ -1,0 +1,9 @@
+// Counter =====================================================================
+
+styla('uniqueIdCounter', 0);
+
+uniqueId(prefix = '')
+  counter = styla('uniqueIdCounter');
+  id = prefix + counter;
+  styla('uniqueIdCounter', counter + 1);
+  return id;

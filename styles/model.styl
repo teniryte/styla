@@ -1,0 +1,9 @@
+model(name, val = null)
+
+  if name == 'centered'
+    margin-left: auto;
+    margin-right: auto;
+    width: val;
+
+centered(val)
+  model('centered', val)

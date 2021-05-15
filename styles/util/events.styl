@@ -1,0 +1,37 @@
+styla('events', {});
+styla('eventsFns', {});
+styla('firedEvents', ());
+
+on(eventName, fn)
+  firedEvents = styla('firedEvents');
+  if eventName in firedEvents
+    fn();
+  else
+    fnName = uniqueId('event-fn-');
+    events = styla('events');
+    eventsFns = styla('eventsFns');
+    eventsFns[fnName] = fn;
+    events[fnName] = eventName;
+    styla('events', events);
+    styla('eventsFns', eventsFns);
+
+emit(emittedEvent)
+  firedEvents = styla('firedEvents');
+  if emittedEvent in firedEvents
+    return;
+  else
+    push(firedEvents, emittedEvent);
+    for fnName, eventName in styla('events')
+      if emittedEvent == eventName
+        fn = styla('eventsFns')[fnName];
+        if type(fn) == 'object'
+          def(fn);
+        else
+          props = fn(apply);
+          if props
+            def(props);
+
+$()
+  {block}
+  sel = selector();
+  emit(':' + sel);  

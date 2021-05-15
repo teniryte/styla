@@ -1,0 +1,171 @@
+// Display
+
+lay(val)
+  if val == grid || val == flex || val == chess
+    display: flex;
+  if val == line-grid || val == line || val == row || val == inline-flex
+    display: inline-flex;
+  if val == iblock || val == inline-block || val == ib
+    display: inline-block;
+    vertical-align: middle;
+
+// Justify-Content
+
+lay-align(val)
+  if val == left
+    justify-content: flex-start;
+  if val == right
+    justify-content: flex-end;
+  if val == center
+    justify-content: center;
+  if val == full || val == all || val == wide
+    justify-content: space-between;
+  if val == mid || val == medium || val == middle
+    justify-content: space-around;
+
+pin(val)
+  lay-align(val)
+
+// Align-Items
+
+lay-vertical(val)
+  if val == top || val == up || val == left || val == begin || val == start
+    align-items: flex-start;
+  if val == bottom || val == down || val == right || val == end || val == finish
+    align-items: flex-end;
+  if val == middle || val == center
+    align-items: center;
+  if val == stretch || val == extend || val == pull || val == elastic
+    align-items: stretch;
+  if val == baseline || val == normal || val == text || val == base
+    align-items: baseline;
+
+grav(val)
+  lay-vertical(val)
+
+lift(val)
+  lay-vertical(val)
+
+// Align-Content
+
+lay-lining(val)
+  if val == stretch || val == extend || val == pull || val == elastic
+    align-content: stretch;
+  if val == center
+    align-content: center;
+  if val == left || val == start || val == top || val == begin
+    align-content: flex-start;
+  if val == right || val == finish || val == bottom || val == end
+    align-content: flex-end;
+  if val == full || val == over || val == total || val == wide
+    align-content: space-between;
+  if val == mid || val == medium || val == middle || val == shared
+    align-content: space-around;
+
+side(val)
+  lay-lining(val)
+
+lining(val)
+  lay-lining(val)
+
+// Flex-Wrap
+
+lay-chain(val)
+  if val == line || val == single || val == one || val == none
+    flex-wrap: nowrap;
+  if val == table || val == grid || val == cell || val == chess || val == many
+    flex-wrap: wrap;
+  if val == table-reverse || val == grid-reverse || val == cell-reverse || val == chess-reverse || val == many-reverse
+    flex-wrap: wrap-reverse;
+
+wrap(val)
+  lay-chain(val)
+
+rows(val)
+  lay-chain(val)
+
+lane(val)
+  lay-chain(val)
+
+// Flex-Direction
+
+lay-direction(val)
+  if val == row || val == normal || val == ltr || val == right
+    flex-direction: row;
+  if val == row-reverse || val == reverse || val == rtl || val == left
+    flex-direction: row-reverse;
+  if val == col || val == column || val == stack || val == ttb || val == down || val == bottom
+    flex-direction: column;
+  if val == col-reverse || val == column-reverse || val == stack-reverse || val == btt || val == up || val == top
+    flex-direction: column-reverse;
+
+way(val)
+  lay-direction(val)
+
+vector(val)
+  lay-direction(val)
+
+route(val)
+  lay-direction(val)
+
+point(val)
+  lay-direction(val)
+
+// Flex-Grow
+
+lay-rate(val)
+  flex-grow: val;
+
+rate(val)
+  lay-rate(val)
+
+grow(val)
+  lay-rate(val)
+
+// Flex-Shrink
+
+lay-reduce(val)
+  flex-shrink: val;
+
+small(val)
+  lay-reduce(val)
+
+reduce(val)
+  lay-reduce(val)
+
+small(val)
+  lay-reduce(val)
+
+shorten(val)
+  lay-reduce(val)
+
+// Flex-Basis
+
+lay-size(val)
+  flex-basis: val;
+
+size(val)
+  lay-size(val)
+
+// Align-Self
+
+lay-align-self(val)
+  if val == top || val == up
+    align-self: flex-start;
+  if val == bottom || val == down
+    align-self: flex-end;
+  if val == middle || val == center
+    align-self: center;
+  if val == stretch || val == extend || val == pull || val == elastic
+    align-self: stretch;
+  if val == baseline || val == normal || val == text
+    align-self: baseline;
+
+item-align(val)
+  lay-align-self(val)
+
+press(val)
+  lay-align-self(val)
+
+drag(val)
+  lay-align-self(val)

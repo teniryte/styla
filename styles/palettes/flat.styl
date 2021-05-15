@@ -1,0 +1,23 @@
+flatColors = {
+  jeans: (#5D9CEC #4A89DC),
+  aqua: (#4FC1E9 #3BAFDA),
+  mint: (#48CFAD #37BC9B),
+  grass: (#A0D468 #8CC152),
+  sun: (#FFCE54 #F6BB42),
+  amber: (#FC6E51 #E9573F),
+  grape: (#ED5565 #DA4453),
+  lavender: (#AC92EC #967ADC),
+  rose: (#EC87C0 #D770AD),
+  lightGrey: (#F5F7FA #E6E9ED),
+  mediumGrey: (#CCD1D9 #AAB2BD),
+  darkGrey: (#656D78 #434A54),
+};
+
+flatLight(name)
+  return flatColors[name][0];
+
+flatDark(name)
+  return flatColors[name][1];
+
+flat(name)
+  return flatDark(name);

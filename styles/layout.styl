@@ -1,0 +1,87 @@
+$layoutSizes = {
+  '1': 1,
+  '2': 2,
+  '3': 3,
+  '4': 4,
+  '5': 5,
+  '6': 6,
+  '7': 7,
+  '8': 8,
+  '9': 9,
+  'a': 10,
+  'b': 11,
+  'c': 12,
+  'd': 13,
+  'e': 14,
+  'f': 15,
+};
+
+applyLayout(total = 1200px)
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  layoutLayer(total);
+
+layoutLayer(total)
+
+  for name, value in $layoutSizes
+    val = (total / 16) * value;
+
+    .lay-t{name}
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: val;
+
+      & + .lay
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: val;
+
+    .lay-r{name}
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: val;
+
+      & + .lay
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: val;
+
+    .lay-b{name}
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: val;
+
+      & + .lay
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: val;
+
+    .lay-l{name}
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: val;
+
+      & + .lay
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: val;

@@ -1,0 +1,25 @@
+parseBlock(data = block)
+  object = $parseBlock(data);
+  result = {};
+  for prop in object
+    name = prop[0];
+    value = s(prop[1]);
+    result[name] = value;
+  return result;
+
+getProperty(data, name)
+  current = data;
+  for key in split('.', name)
+    current = current[key];
+  return current;
+
+setProperty(data, name, value)
+  current = data;
+  chain = split('.', name);
+  target = pop(chain);
+  for key in chain
+    if !(key in current)
+      current[key] = {};
+    current = current[key];
+  current[target] = value;
+  return data;

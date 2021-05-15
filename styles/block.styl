@@ -1,0 +1,36 @@
+iblock()
+  display: inline-block;
+  vertical-align: middle;
+
+centered(val)
+  width: val;
+  margin-left: auto;
+  margin-right: auto;
+
+clear-box(val)
+  if val == all
+    padding: 0;
+    margin: 0;
+    border: none;
+    float: none;
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 0;
+    border-radius: 0;
+    background: none;
+  if val == bounds
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  if val == position
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 0;

@@ -1,0 +1,10 @@
+def(props = {}, scope = null)
+  for key, value in props
+    if key == 'mixins'
+      for mixin in value
+        mixin()
+    else
+      if scope == null
+        define(key, value, true);
+      else
+        scope[key] = value;
