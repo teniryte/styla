@@ -1,6 +1,6 @@
 {
   "name": "styla",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "main": "./lib/index.js",
   "description": "Stylus Utilities & Mixins Library",
   "keywords": [],
@@ -8,7 +8,7 @@
   "license": "MIT",
   "developing": true,
   "dependencies": {
-    "ooi": "^0.1.52",
+    "ooi": "^0.1.55",
     "stylus": "^0.54.8",
     "stylus-supremacy": "^2.15.0"
   },
