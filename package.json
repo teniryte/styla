@@ -1,0 +1,32 @@
+{
+  "name": "styla",
+  "version": "2.0.3",
+  "main": "./lib/index.js",
+  "description": "Stylus Utilities & Mixins Library",
+  "keywords": [],
+  "homepage": "https://github.com/teniryte/styla",
+  "license": "MIT",
+  "developing": true,
+  "dependencies": {
+    "ooi": "^0.1.52",
+    "stylus": "^0.54.8",
+    "stylus-supremacy": "^2.15.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "engines": {
+    "node": ">14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@lab.lpchat.ru:lpchat/styla.git"
+  },
+  "author": {
+    "name": "Maxim Demkin",
+    "email": "demkin.maxim@gmail.com"
+  },
+  "scripts": {
+    "test": "node ./test"
+  }
+}
